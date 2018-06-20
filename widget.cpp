@@ -32,10 +32,11 @@ void Widget::on_pushButton_clicked()
 
 
     int size = font_1.pointSize();
-    QString col("red");
+
     QString strMsg(ui->textEdit->toPlainText());
     QString face(font_1.family());
-    QString strContent = QString("<p><font size=\"%1\" color=\"%2\" face=\"%3\" >%4</font></p>").arg(size).arg(col).arg(face).arg(strMsg);
+
+    QString strContent = QString("<p><span style=\"%2\"><font face=\"%3\" >%4</font></p>").arg(size).arg(col).arg(face).arg(strMsg);
     qDebug()<<size;
     qDebug()<<col;
     qDebug()<<face;
@@ -52,16 +53,14 @@ void Widget::on_pushButton_2_clicked()
 {
     bool ok;
     font_1=QFontDialog::getFont(&ok,QFont("黑体",14),this);
-    if(ok)
-        ui->textEdit->setFont(font_1);
-    else return;
+qDebug()<<font_1<<font_1.pointSize();
 }
 
 void Widget::on_pushButton_3_clicked()
 {
 
-    color=QColorDialog::getColor(QColor("black"),this);
-    font_1.set
+    col=QString("color:")+ QColorDialog::getColor(QColor("black"),this).name();
+
 
 
 }

@@ -32,7 +32,7 @@ private:
     Ui::Widget *ui;
 
     QFont font_1;
-   QColor color;
+   QString col="red";
 
 };
 
